@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/agussantinelli/VUELTA-F1NAL-MonoRepo" target="_blank">
-    <img src="https://img.shields.io/badge/💻%20MonoRepo%20VUELTA%20F1NAL-FF1801?style=for-the-badge&logo=github&logoColor=white" alt="MonoRepo"/>
+    <img src="https://img.shields.io/badge/💻%20MonoRepo%20VUELTA%20F1NAL-FF1801?style=for-the-badge&logo=github&logoColor=white" alt="MonoRepo Vuelta F1nal"/>
   </a>
   <a href="https://github.com/agussantinelli" target="_blank">
     <img src="https://img.shields.io/badge/👤%20Agustín%20Santinelli-agussantinelli-000000?style=for-the-badge&logo=github&logoColor=white" alt="Agus"/>
