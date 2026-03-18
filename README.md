@@ -10,7 +10,9 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Stack-Kotlin_Multiplatform-blueviolet?style=for-the-badge&logo=kotlin&logoColor=white" alt="Stack Badge"/>
+  <img src="https://img.shields.io/badge/Kotlin-Multiplatform-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin Badge"/>
+  <img src="https://img.shields.io/badge/Compose-Frontend-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Badge"/>
+  <img src="https://img.shields.io/badge/Ktor-Backend-08c3d4?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor Badge"/>
 </div>
 
 <div align="center">
