@@ -13,11 +13,12 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Estado-En_Desarrollo-yellow?style=for-the-badge" alt="Status Badge"/>
   <img src="https://img.shields.io/badge/Stack-Kotlin_Multiplatform-blueviolet?style=for-the-badge&logo=kotlin&logoColor=white" alt="Stack Badge"/>
-  <img src="https://img.shields.io/badge/Copyright-All_Rights_Reserved-red?style=for-the-badge&logo=copyright&logoColor=white" alt="Copyright Badge"/>
 </div>
 
+<div align="center">
+  <img src="https://img.shields.io/badge/Copyright-All_Rights_Reserved-red?style=for-the-badge&logo=copyright&logoColor=white" alt="Copyright Badge"/>
+</div>
 <hr/>
 
 <h2>🎯 Objetivo del Proyecto</h2>
