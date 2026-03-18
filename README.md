@@ -14,6 +14,7 @@
   <img src="https://img.shields.io/badge/Jetpack%20Compose-Frontend-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Badge"/>
   <img src="https://img.shields.io/badge/Ktor-Backend-08c3d4?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor Badge"/>
   <img src="https://img.shields.io/badge/IntelliJ_IDEA-IDE-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA Badge"/>
+  <img src="https://img.shields.io/badge/Gradle-Build_System-02303A?style=for-the-badge&logo=gradle&logoColor=white" alt="Gradle Badge"/>
 </div>
 
 <div align="center">
