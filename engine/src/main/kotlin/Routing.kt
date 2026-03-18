@@ -35,7 +35,17 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 fun Application.configureRouting() {
     routing {
         get("/") {
-            call.respondText("Hello World!")
+            call.respondText("🏎️ VUELTA F1NAL Engine: Online y rugiendo!")
+        }
+
+        get("/telemetry/verstappen") {
+            val data = mapOf(
+                "driver" to "Max Verstappen",
+                "speed" to "324 km/h",
+                "lap" to "1:24.562",
+                "status" to "DRS Enabled"
+            )
+            call.respond(data)
         }
     }
 }
