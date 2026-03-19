@@ -3,13 +3,13 @@
 
     <application
             android:allowBackup="true"
-            android:label="VUELTA F1NAL"
-            android:supportsRtl="true"
-            android:theme="@android:style/Theme.Material.NoActionBar">
+            android:label="@string/app_name"
+            android:supportsRtl="true">
 
         <activity
                 android:name=".MainActivity"
-                android:exported="true">
+                android:exported="true"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
