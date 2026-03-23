@@ -92,31 +92,6 @@
 
 <hr>
 
-<h2>📂 Estructura del Monorepo</h2>
-
-<p>El proyecto utiliza una estructura modular para maximizar la reutilización de código:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th align="left">Módulo</th>
-      <th align="left">Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>📂 engine/</code></td>
-      <td><b>Backend Core:</b> Servidor Ktor encargado del procesamiento, predicciones y suministro de API.</td>
-    </tr>
-    <tr>
-      <td><code>📂 composeApp/</code></td>
-      <td><b>Frontend Android:</b> Aplicación nativa desarrollada con Jetpack Compose para una UI reactiva.</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr>
-
 <h2>🧠 El Cerebro: Motor de Predicción (Backend)</h2>
 
 <p>
@@ -159,6 +134,31 @@
       <td><strong>Archivo Histórico</strong></td>
       <td>Explorador de pilotos, constructores y circuitos.</td>
       <td>🛠️ En Diseño</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>📂 Estructura del Monorepo</h2>
+
+<p>El proyecto utiliza una estructura modular para maximizar la reutilización de código:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Módulo</th>
+      <th align="left">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>📂 engine/</code></td>
+      <td><b>Backend Core:</b> Servidor Ktor encargado del procesamiento, predicciones y suministro de API.</td>
+    </tr>
+    <tr>
+      <td><code>📂 composeApp/</code></td>
+      <td><b>Frontend Android:</b> Aplicación nativa desarrollada con Jetpack Compose para una UI reactiva.</td>
     </tr>
   </tbody>
 </table>
