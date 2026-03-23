@@ -10,7 +10,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Kotlin-1.9.22-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin Badge"/>
+  <img src="https://img.shields.io/badge/Kotlin-1.9.23-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin Badge"/>
   <img src="https://img.shields.io/badge/Compose-BOM_2024.02.01-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Badge"/>
   <img src="https://img.shields.io/badge/Ktor-2.3.10-08c3d4?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor Badge"/>
   <img src="https://img.shields.io/badge/IntelliJ_IDEA-IDE-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA Badge"/>
@@ -49,7 +49,7 @@
   <tbody>
     <tr>
       <td><strong>🎯 Core</strong></td>
-      <td>Kotlin 1.9.22</td>
+      <td>Kotlin 1.9.23</td>
       <td>Lenguaje principal y lógica compartida multiplataforma.</td>
     </tr>
     <tr>
