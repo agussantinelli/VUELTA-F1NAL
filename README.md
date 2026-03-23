@@ -115,7 +115,7 @@
   </tbody>
 </table>
 
-<hr/>
+<hr>
 
 <h2>🧠 El Cerebro: Motor de Predicción (Backend)</h2>
 
