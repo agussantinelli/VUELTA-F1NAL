@@ -83,7 +83,7 @@
     </tr>
     <tr>
       <td><strong>💻 Tooling</strong></td>
-      <td>IntelliJ IDEA / Android Studio</td>
+      <td>IntelliJ IDEA</td>
       <td>Entorno de desarrollo (IDE) optimizado para el ecosistema Kotlin.</td>
     </tr>
   </tbody>
