@@ -48,22 +48,22 @@
   <tbody>
     <tr>
       <td><strong>🎯 Core</strong></td>
-      <td>Kotlin (KMP)</td>
+      <td>Kotlin 1.9.22</td>
       <td>Lenguaje principal y lógica compartida multiplataforma.</td>
     </tr>
     <tr>
       <td><strong>⚙️ Backend</strong></td>
-      <td>Ktor Framework</td>
+      <td>Ktor 2.3.10</td>
       <td>Motor asíncrono para APIs, WebSockets y Server-Side.</td>
     </tr>
     <tr>
       <td><strong>📱 Frontend</strong></td>
-      <td>Jetpack Compose</td>
+      <td>Jetpack Compose + Material 3</td>
       <td>UI declarativa nativa para una experiencia Android fluida.</td>
     </tr>
     <tr>
       <td><strong>🏗️ Build System</strong></td>
-      <td>Gradle Multi-project</td>
+      <td>Gradle 8.7</td>
       <td>Gestión modular de dependencias y ciclos de compilación.</td>
     </tr>
     <tr>
@@ -104,16 +104,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>📂 shared/</code></td>
-      <td><b>Código Común:</b> Contiene los modelos de datos, DTOs y lógica de negocio compartida entre cliente y servidor.</td>
-    </tr>
-    <tr>
-      <td><code>📂 compose-app/</code></td>
-      <td><b>Frontend Android:</b> Aplicación nativa desarrollada con Jetpack Compose para una UI reactiva.</td>
-    </tr>
-    <tr>
-      <td><code>📂 ktor-server/</code></td>
+      <td><code>📂 engine/</code></td>
       <td><b>Backend Core:</b> Servidor Ktor encargado del procesamiento, predicciones y suministro de API.</td>
+    </tr>
+    <tr>
+      <td><code>📂 composeApp/</code></td>
+      <td><b>Frontend Android:</b> Aplicación nativa desarrollada con Jetpack Compose para una UI reactiva.</td>
     </tr>
   </tbody>
 </table>
@@ -123,7 +119,7 @@
 <h2>🧠 El Cerebro: Motor de Predicción (Backend)</h2>
 
 <p>
-  El núcleo lógico reside en <code>ktor-server/</code>, diseñado para transformar Big Data histórico en insights accionables:
+  El núcleo lógico reside en <code>engine/</code>, diseñado para transformar Big Data histórico en insights accionables:
 </p>
 
 <ul>
@@ -137,7 +133,7 @@
 
 <h2>📱 Experiencia de Usuario (Frontend)</h2>
 
-<p>La interfaz en <code>compose-app/</code> traduce la complejidad de los datos en una narrativa visual:</p>
+<p>La interfaz en <code>composeApp/</code> traduce la complejidad de los datos en una narrativa visual:</p>
 
 <table>
   <thead>
