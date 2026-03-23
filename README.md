@@ -16,6 +16,7 @@
   <img src="https://img.shields.io/badge/IntelliJ_IDEA-IDE-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA Badge"/>
   <img src="https://img.shields.io/badge/Gradle-Build_System-02303A?style=for-the-badge&logo=gradle&logoColor=white" alt="Gradle Badge"/>
   <img src="https://img.shields.io/badge/Android-Native-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android Badge"/>
+  <img src="https://img.shields.io/badge/Material%20Design%203-Frontend-7F52FF?style=for-the-badge&logo=materialdesign&logoColor=white" alt="Material 3 Badge"/>
 </div>
 
 <div align="center">
