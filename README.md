@@ -22,7 +22,7 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Copyright-All_Rights_Reserved-red?style=for-the-badge&logo=copyright&logoColor=white" alt="Copyright Badge"/>
 </div>
-<hr/>
+<hr>
 
 <h2>🎯 Objetivo del Proyecto</h2>
 
@@ -34,7 +34,7 @@
   La arquitectura permite una sincronización perfecta entre el rigor del procesamiento de datos en el servidor y una experiencia de usuario fluida y moderna en dispositivos móviles.
 </p>
 
-<hr/>
+<hr>
 
 <h2>🛠️ Stack Tecnológico</h2>
 
@@ -90,7 +90,7 @@
   </tbody>
 </table>
 
-<hr/>
+<hr>
 
 <h2>📂 Estructura del Monorepo</h2>
 
@@ -130,7 +130,7 @@
   <li><b>Data Ingestion:</b> Normalización de fuentes históricas (1950-Presente) y feeds de telemetría en vivo.</li>
 </ul>
 
-<hr/>
+<hr>
 
 <h2>📱 Experiencia de Usuario (Frontend)</h2>
 
@@ -163,7 +163,7 @@
   </tbody>
 </table>
 
-<hr/>
+<hr>
 
 <h2>📬 Contacto</h2>
 
@@ -180,16 +180,29 @@
 
 <p align="left">
   Este proyecto es <b>propiedad intelectual privada</b> de Agustín Santinelli. No se otorga ninguna licencia de uso abierto. Puedes consultar los términos detallados en el archivo 
-  <a href="LICENSE"><code>LICENSE</code></a>.
+  <a href="LICENSE"><code>LICENSE</code></a> incluido en este repositorio.
 </p>
 
 <p align="left">
   <i>
-    ⚠️ <b>Restricción Firme:</b> Queda terminantemente prohibida la copia, reproducción, distribución o modificación de este código sin autorización expresa del autor.
+    ⚠️ <b>Restricción Firme:</b> Queda terminantemente prohibida la copia, reproducción, distribución o modificación de este código sin autorización expresa del autor. Este repositorio se publica exclusivamente como exhibición de portafolio profesional.
   </i>
 </p>
 
-<hr />
+<hr>
+
+<h2 align="left">🚫 Copyright Total</h2>
+
+<p align="left">
+  Este proyecto es propiedad intelectual exclusiva de <b>Agustín Santinelli</b>. No se aceptan contribuciones externas o forks para su uso público sin previo acuerdo por escrito.
+</p>
+
+<p align="left">
+  Si tienes sugerencias directas o deseas explorar colaboraciones comerciales, por favor contacta al autor: 
+  <a href="mailto:agustinsantinelli@gmail.com">agustinsantinelli@gmail.com</a>.
+</p>
+
+<hr>
 
 <div align="center">
   <p><em>VUELTA F1NAL – Donde la historia se encuentra con el futuro.</em></p>
