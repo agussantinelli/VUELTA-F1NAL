@@ -160,6 +160,22 @@
 
 <hr>
 
+<h2>🧠 Skills Especializadas</h2>
+
+<p>Este proyecto utiliza un sistema de <strong>Skills</strong> (guías avanzadas) para asegurar que cualquier desarrollo (humano o por IA) siga estrictamente los estándares arquitectónicos del proyecto:</p>
+
+<ul>
+    <li><strong>🏗️ Arquitectura Modular:</strong> Reglas estrictas sobre la separación de capas (Data, Domain, UI) y el flujo de dependencias.</li>
+    <li><strong>📱 Compose State Management:</strong> Mejores prácticas para la gestión de estado con <code>MutableStateFlow</code>, State Hoisting y arquitectura MVI/MVVM.</li>
+    <li><strong>🌊 Flow & Coroutines:</strong> Estándar para operaciones asíncronas seguras, manejo de scopes (ViewModel) y recolección de flujos con ciclo de vida.</li>
+    <li><strong>📐 Adaptive UI:</strong> Estrategias para un diseño responsivo y adaptable a diferentes tamaños de pantalla (Compact, Medium, Expanded).</li>
+    <li><strong>⚙️ Ktor Engine Logic:</strong> Normas para el desarrollo del backend, incluyendo ruteo modular, serialización eficiente y lógica de predicción aislada.</li>
+    <li><strong>🧹 Clean Structure:</strong> Organización coherente de paquetes y nomenclatura estándar para componentes declarativos en Jetpack Compose.</li>
+    <li><strong>🛠️ Skill Generator:</strong> Herramienta automatizada para la creación de nuevas guías que expandan el conocimiento operativo del sistema.</li>
+</ul>
+
+<hr>
+
 <h2>📬 Contacto</h2>
 
 <div align="center">
