@@ -29,7 +29,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    // También es buena práctica asegurar el target de Kotlin aquí
     kotlinOptions {
         jvmTarget = "21"
     }
@@ -43,4 +42,11 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("com.google.android.material:material:1.11.0")
 
+    // Ktor Client
+    val ktor_version = "2.3.10"
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-okhttp:$ktor_version")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }
