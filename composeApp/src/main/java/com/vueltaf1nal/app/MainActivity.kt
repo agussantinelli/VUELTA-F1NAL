@@ -32,22 +32,24 @@ data class DriverResult(
     val pos: Int,
     val name: String,
     val team: String,
-    val time: String,
+    val time: String
+)
+
+@Serializable
+data class MaxSpeedData(
+    val name: String,
     val topSpeed: Double,
     val speedLap: Int
 )
 
 sealed class Screen {
     object List : Screen()
-    data class Details(val driver: DriverResult) : Screen()
+    object TopSpeeds : Screen()
 }
 
-// Cliente HTTP Global (Simple para este MVP)
 val client = HttpClient(OkHttp) {
     install(ContentNegotiation) {
-        json(Json {
-            ignoreUnknownKeys = true
-        })
+        json(Json { ignoreUnknownKeys = true })
     }
 }
 
@@ -61,37 +63,28 @@ class MainActivity : ComponentActivity() {
                 var isLoading by remember { mutableStateOf(true) }
                 var error by remember { mutableStateOf<String?>(null) }
 
-                // Fetch data from Backend
                 LaunchedEffect(Unit) {
                     try {
                         results = client.get("http://10.0.2.2:8080/api/results").body()
                         isLoading = false
                     } catch (e: Exception) {
-                        error = "No se pudo conectar con el motor: ${e.message}"
+                        error = "Error: No se pudo conectar con el motor."
                         isLoading = false
                     }
                 }
 
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = DeepNavy
-                ) {
+                Surface(modifier = Modifier.fillMaxSize(), color = DeepNavy) {
                     if (isLoading) {
-                        Box(contentAlignment = Alignment.Center) {
-                            CircularProgressIndicator(color = RacingRed)
-                        }
+                        Box(contentAlignment = Alignment.Center) { CircularProgressIndicator(color = RacingRed) }
                     } else if (error != null) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Text(text = error!!, color = Color.White, modifier = Modifier.padding(20.dp))
-                        }
+                        Box(contentAlignment = Alignment.Center) { Text(error!!, color = Color.White) }
                     } else {
-                        when (val screen = currentScreen) {
+                        when (currentScreen) {
                             is Screen.List -> ResultListScreen(
                                 results = results,
-                                onSeeDetails = { currentScreen = Screen.Details(it) }
+                                onSeeTopSpeeds = { currentScreen = Screen.TopSpeeds }
                             )
-                            is Screen.Details -> TopSpeedDetailScreen(
-                                driver = screen.driver,
+                            is Screen.TopSpeeds -> TopSpeedsScreen(
                                 onBack = { currentScreen = Screen.List }
                             )
                         }
@@ -103,37 +96,98 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ResultListScreen(results: List<DriverResult>, onSeeDetails: (DriverResult) -> Unit) {
+fun ResultListScreen(results: List<DriverResult>, onSeeTopSpeeds: () -> Unit) {
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(DeepNavy)
-            .padding(16.dp),
+        modifier = Modifier.fillMaxSize().background(DeepNavy).padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(modifier = Modifier.size(120.dp), contentAlignment = Alignment.Center) {
+        Box(modifier = Modifier.size(100.dp), contentAlignment = Alignment.Center) {
             Text("LOGO", color = RacingRed, fontWeight = FontWeight.Bold)
-            // Image(painter = painterResource(id = R.drawable.logo_minimalista), ...)
         }
+        Text("GP BRASIL 2024", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
         
-        Text(
-            text = "GP BRASIL 2024",
-            color = Color.White,
-            fontSize = 18.sp,
-            fontWeight = FontWeight.ExtraBold,
-            modifier = Modifier.padding(bottom = 16.dp)
-        )
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(
+            onClick = onSeeTopSpeeds,
+            colors = ButtonDefaults.buttonColors(containerColor = RacingRed),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            shape = RoundedCornerShape(8.dp)
+        ) {
+            Text("VER TOP VELOCIDADES DEL GP", fontWeight = FontWeight.Bold)
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
 
         LazyColumn(verticalArrangement = Arrangement.spacedBy(12.dp)) {
             items(results) { driver ->
-                ResultCard(driver, onSeeDetails)
+                ResultCard(driver)
             }
         }
     }
 }
 
 @Composable
-fun ResultCard(driver: DriverResult, onSeeDetails: (DriverResult) -> Unit) {
+fun ResultCard(driver: DriverResult) {
+    Card(
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = BrightNavy),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text("P${driver.pos} ${driver.name}", color = Color.White, fontWeight = FontWeight.Bold)
+                Text(driver.team, color = AeroSilver, fontSize = 12.sp)
+            }
+            Text(text = driver.time, color = TelemetryGreen, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+        }
+    }
+}
+
+@Composable
+fun TopSpeedsScreen(onBack: () -> Unit) {
+    var topSpeeds by remember { mutableStateOf<List<MaxSpeedData>>(emptyList()) }
+    var isLoading by remember { mutableStateOf(true) }
+
+    LaunchedEffect(Unit) {
+        try {
+            topSpeeds = client.get("http://10.0.2.2:8080/api/max-speed").body()
+            isLoading = false
+        } catch (e: Exception) {
+            isLoading = false
+        }
+    }
+
+    Column(
+        modifier = Modifier.fillMaxSize().padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("TOP SPEEDS - BRASIL", color = RacingRed, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)
+        
+        Spacer(modifier = Modifier.height(24.dp))
+        
+        if (isLoading) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                CircularProgressIndicator(color = RacingRed)
+            }
+        } else {
+            LazyColumn(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                items(topSpeeds) { data ->
+                    SpeedCard(data)
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.weight(1f))
+
+        TextButton(onClick = onBack) {
+            Text("← VOLVER A RESULTADOS", color = AeroSilver, fontWeight = FontWeight.Bold)
+        }
+    }
+}
+
+@Composable
+fun SpeedCard(data: MaxSpeedData) {
     Card(
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = BrightNavy),
@@ -144,60 +198,11 @@ fun ResultCard(driver: DriverResult, onSeeDetails: (DriverResult) -> Unit) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(text = "P${driver.pos} ${driver.name}", color = Color.White, fontWeight = FontWeight.Bold)
-                Text(text = driver.team, color = AeroSilver, fontSize = 12.sp)
+            Column {
+                Text(text = data.name.uppercase(), color = Color.White, fontWeight = FontWeight.Bold)
+                Text(text = "VUELTA ${data.speedLap}", color = AeroSilver, fontSize = 10.sp)
             }
-            Button(
-                onClick = { onSeeDetails(driver) },
-                colors = ButtonDefaults.buttonColors(containerColor = RacingRed),
-                contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
-                shape = RoundedCornerShape(8.dp)
-            ) {
-                Text("VELOCIDADES", fontSize = 10.sp, color = Color.White)
-            }
-        }
-    }
-}
-
-@Composable
-fun TopSpeedDetailScreen(driver: DriverResult, onBack: () -> Unit) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(text = driver.name.uppercase(), color = RacingRed, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)
-        Text(text = driver.team, color = Color.White, fontSize = 16.sp)
-        
-        Spacer(modifier = Modifier.height(32.dp))
-        
-        Card(
-            shape = RoundedCornerShape(24.dp),
-            colors = CardDefaults.cardColors(containerColor = BrightNavy),
-            modifier = Modifier.size(200.dp)
-        ) {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(text = "TOP SPEED", color = AeroSilver, fontSize = 14.sp)
-                Text(text = "${driver.topSpeed}", color = TelemetryGreen, fontSize = 48.sp, fontWeight = FontWeight.Black)
-                Text(text = "KM/H", color = TelemetryGreen, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-                
-                Spacer(modifier = Modifier.height(8.dp))
-                
-                Text(text = "EN VUELTA ${driver.speedLap}", color = Color.White, fontSize = 12.sp)
-            }
-        }
-
-        Spacer(modifier = Modifier.height(48.dp))
-
-        TextButton(onClick = onBack) {
-            Text("← VOLVER A RESULTADOS", color = AeroSilver, fontWeight = FontWeight.Bold)
+            Text(text = "${data.topSpeed} KM/H", color = TelemetryGreen, fontSize = 18.sp, fontWeight = FontWeight.Black)
         }
     }
 }
