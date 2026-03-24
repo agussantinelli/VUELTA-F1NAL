@@ -110,19 +110,19 @@
   </thead>
   <tbody>
     <tr>
+      <td><strong>Resultados Globales</strong></td>
+      <td>Visualización de posiciones, tiempos y escuderías por GP.</td>
+      <td>🚀 Operativo</td>
+    </tr>
+    <tr>
+      <td><strong>Top Speeds Analysis</strong></td>
+      <td>Telemetría de velocidades máximas alcanzadas y vueltas récord.</td>
+      <td>🚀 Operativo</td>
+    </tr>
+    <tr>
       <td><strong>Dashboard Real-Time</strong></td>
-      <td>Seguimiento de sesiones en vivo y cronometrajes.</td>
+      <td>Seguimiento de sesiones en vivo y cronometrajes dinámicos.</td>
       <td>⏳ Planeado</td>
-    </tr>
-    <tr>
-      <td><strong>Predictor UI</strong></td>
-      <td>Interfaz interactiva para visualizar probabilidades de podio.</td>
-      <td>🚀 Prioridad</td>
-    </tr>
-    <tr>
-      <td><strong>Archivo Histórico</strong></td>
-      <td>Explorador de pilotos, constructores y circuitos.</td>
-      <td>🛠️ En Diseño</td>
     </tr>
   </tbody>
 </table>
