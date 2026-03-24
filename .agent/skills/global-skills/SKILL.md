@@ -16,6 +16,8 @@ This skill serves as a central index for all architectural and development guide
 - **[compose-state-management](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/compose-state-management/SKILL.md)**: Guidelines for MutableStateFlow, StateView, state hoisting, and MVI/MVVM in Compose.
 - **[kotlin-flow-coroutines](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/kotlin-flow-coroutines/SKILL.md)**: Rules for async operations using Flow, Coroutines, and safe data collection.
 - **[modular-architecture](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/modular-architecture/SKILL.md)**: Maintaining the modular structure (Data/Domain/UI).
+- **[naming-conventions](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/naming-conventions/SKILL.md)**: Standardized directory and file naming across the project.
+- **[mappers-logic](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/mappers-logic/SKILL.md)**: Pattern for data transformation and repository implementation logic.
 
 ## Backend Core (`engine`)
 
