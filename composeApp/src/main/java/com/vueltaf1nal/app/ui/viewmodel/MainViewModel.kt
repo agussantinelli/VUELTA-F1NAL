@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vueltaf1nal.app.domain.models.DriverResult
 import com.vueltaf1nal.app.domain.models.MaxSpeed
-import com.vueltaf1nal.app.data.repositories.ResultsRepository
-import com.vueltaf1nal.app.data.repositories.TopSpeedsRepository
+import com.vueltaf1nal.app.data.mappers.ResultsMapper
+import com.vueltaf1nal.app.data.mappers.TopSpeedsMapper
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -16,8 +16,8 @@ sealed class Screen {
 }
 
 class MainViewModel(
-    private val resultsRepository: ResultsRepository,
-    private val topSpeedsRepository: TopSpeedsRepository
+    private val resultsMapper: ResultsMapper,
+    private val topSpeedsMapper: TopSpeedsMapper
 ) : ViewModel() {
 
     private val _currentScreen = MutableStateFlow<Screen>(Screen.List)
@@ -47,7 +47,7 @@ class MainViewModel(
             _isLoading.value = true
             _error.value = null
             try {
-                _results.value = resultsRepository.getDriverResults()
+                _results.value = resultsMapper.getDriverResults()
             } catch (e: Exception) {
                 _error.value = "Error: No se pudo conectar con el motor."
             } finally {
@@ -60,7 +60,7 @@ class MainViewModel(
         viewModelScope.launch {
             _isTopSpeedsLoading.value = true
             try {
-                _topSpeeds.value = topSpeedsRepository.getTopSpeeds()
+                _topSpeeds.value = topSpeedsMapper.getTopSpeeds()
             } catch (e: Exception) {
                 // Handle error
             } finally {
