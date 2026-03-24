@@ -129,6 +129,30 @@
 
 <hr>
 
+<h2>✨ Arquitectura Limpia Reactiva (Frontend)</h2>
+
+<p>
+  El frontend de <code>composeApp/</code> sigue una arquitectura limpia y reactiva, inspirada en los principios de Clean Architecture y MVI (Model-View-Intent), adaptada para Jetpack Compose.
+</p>
+
+<ul>
+  <li><b>Capa de Datos (Data Layer):</b> Responsable de la obtención y persistencia de datos. Incluye implementaciones de repositorios, fuentes de datos remotas (APIs) y locales (bases de datos). Utiliza DTOs para la serialización/deserialización.</li>
+  <li><b>Capa de Dominio (Domain Layer):</b> Contiene la lógica de negocio pura e independiente de cualquier framework. Define los modelos de negocio (entidades) y las interfaces de los repositorios (contratos). Los casos de uso (Use Cases) orquestan las operaciones de negocio.</li>
+  <li><b>Capa de Presentación (UI Layer):</b> Encargada de mostrar la interfaz de usuario y manejar las interacciones del usuario. Se compone de:
+    <ul>
+      <li><b>Views (Composables):</b> Elementos UI declarativos que reaccionan a los cambios de estado.</li>
+      <li><b>ViewModels:</b> Gestionan el estado de la UI, exponen datos a las Views y manejan la lógica de presentación, interactuando con los casos de uso del dominio.</li>
+      <li><b>State:</b> Representación inmutable del estado de la UI, expuesto a través de <code>StateFlow</code> o <code>MutableStateFlow</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+  Esta separación de responsabilidades garantiza un código modular, testeable y fácil de mantener, promoviendo la reactividad y la unidireccionalidad del flujo de datos.
+</p>
+
+<hr>
+
 <h2>🧠 El Cerebro: Motor de Predicción (Backend)</h2>
 
 <p>
