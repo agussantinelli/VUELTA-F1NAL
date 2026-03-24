@@ -1,5 +1,6 @@
 package com.vueltaf1nal.app.ui.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -10,9 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.vueltaf1nal.app.R
 import com.vueltaf1nal.app.domain.models.DriverResult
 import com.vueltaf1nal.app.ui.theme.*
 
@@ -25,9 +29,12 @@ fun ResultListScreen(
         modifier = Modifier.fillMaxSize().background(DeepNavy).padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(modifier = Modifier.size(100.dp), contentAlignment = Alignment.Center) {
-            Text("LOGO", color = RacingRed, fontWeight = FontWeight.Bold)
-        }
+        Image(
+            painter = painterResource(id = R.drawable.logo_oficial),
+            contentDescription = "Vuelta F1nal Logo",
+            modifier = Modifier.size(120.dp),
+            contentScale = ContentScale.Fit
+        )
         Text("GP BRASIL 2024", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
         
         Spacer(modifier = Modifier.height(16.dp))
