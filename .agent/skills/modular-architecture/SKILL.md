@@ -10,8 +10,8 @@ VUELTA F1NAL follows a strict modular and layered architecture.
 ## Core Rules
 
 1. **Layer Separation**:
-   - **Data Layer**: API clients, Database, Repositories (Data mapping).
-   - **Domain Layer**: Essential business logic and Use Cases (No platform dependencies).
+   - **Data Layer**: API clients, DTOs, Mappers, and Repositories (Unified).
+   - **Domain Layer**: Essential business logic and entities (No interfaces in Domain for simple cases).
    - **UI Layer**: Composables and ViewModels.
 
 2. **Dependency Rule**:
@@ -30,7 +30,7 @@ VUELTA F1NAL follows a strict modular and layered architecture.
    - Keep business logic in plain Kotlin files to allow easier migration to full Multiplatform if needed.
 
 ## Directory Structure
-- `data/`: Repositories, Database, API.
-- `domain/`: Models, Interfaces, UseCases.
-- `ui/`: Screens, Components, Theme.
-- `engine/`: Ktor specific services (Backend).
+- `data/`: `dtos`, `mappers`, `repositories`, `remote`.
+- `domain/`: `models` (Entities).
+- `ui/`: `screens`, `viewmodel`, `theme`.
+- `engine/`: Ktor backend module.
