@@ -160,10 +160,10 @@
 </p>
 
 <ul>
-  <li><b>Análisis de Micro-Sectores:</b> Evaluación técnica de fortalezas de chasis vs motor.</li>
-  <li><b>Factor Climatológico:</b> Algoritmos que ajustan el rendimiento según condiciones de pista.</li>
-  <li><b>Fiabilidad Mecánica:</b> Modelos probabilísticos de DNF basados en desgaste de componentes.</li>
-  <li><b>Data Ingestion:</b> Normalización de fuentes históricas (1950-Presente) y feeds de telemetría en vivo.</li>
+  <li><b>Telemetría Analítica:</b> Procesamiento y entrega de velocidades máximas y vueltas récord por piloto (<code>/api/max-speed</code>).</li>
+  <li><b>F1 Data Logic:</b> Orquestación de resultados históricos y cronometrajes sincronizados (<code>/api/results</code>).</li>
+  <li><b>Mapping & Transport:</b> Transformación de datos crudos en DTOs optimizados para el consumo móvil.</li>
+  <li><b>Engine Scalability:</b> Arquitectura de rutas modulares preparada para la ingesta masiva de sensores en tiempo real.</li>
 </ul>
 
 <hr>
