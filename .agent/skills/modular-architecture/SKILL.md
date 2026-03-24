@@ -22,7 +22,11 @@ VUELTA F1NAL follows a strict modular and layered architecture.
    - Use `DomainModel` for business logic.
    - Map between them in the Repository layer.
 
-4. **KMP (Future Proofing)**:
+4. **Granularity (One per Class)**:
+   - Split Repositories and Services by feature or concern (e.g., `ResultsRepository`, `TopSpeedsRepository`).
+   - Avoid "God" Repositories or Services that handle multiple unrelated business domains.
+
+5. **KMP (Future Proofing)**:
    - Keep business logic in plain Kotlin files to allow easier migration to full Multiplatform if needed.
 
 ## Directory Structure
