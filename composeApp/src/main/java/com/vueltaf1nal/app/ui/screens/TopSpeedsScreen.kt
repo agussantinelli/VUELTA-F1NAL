@@ -30,9 +30,9 @@ fun TopSpeedsScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.logo_oficial),
+            painter = painterResource(id = R.drawable.logo_minimalista),
             contentDescription = "Vuelta F1nal Logo",
-            modifier = Modifier.size(100.dp),
+            modifier = Modifier.fillMaxWidth().height(60.dp).padding(horizontal = 16.dp),
             contentScale = ContentScale.Fit
         )
         Text("TOP SPEEDS - BRASIL", color = RacingRed, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)

@@ -30,9 +30,9 @@ fun ResultListScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.logo_oficial),
+            painter = painterResource(id = R.drawable.logo_minimalista),
             contentDescription = "Vuelta F1nal Logo",
-            modifier = Modifier.size(120.dp),
+            modifier = Modifier.fillMaxWidth().height(80.dp).padding(horizontal = 32.dp),
             contentScale = ContentScale.Fit
         )
         Text("GP BRASIL 2024", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
