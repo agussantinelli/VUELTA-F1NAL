@@ -26,6 +26,7 @@ A robust backend structure ensuring the VUELTA F1NAL motor runs at peak performa
 | :--- | :--- | :--- |
 | **Entry Point** | `Application.kt` | `MainActivity.kt` |
 | **Exposure** | `routes/*.kt` (API Endpoints) | `ui/screens/*.kt` (App Screens) |
-| **State/Logic** | `data/repositories/*.kt` | `ui/viewmodel/*.kt` |
-| **Data models** | `data/dtos` (Server-side) | `data/models/api` (Client-side DTOs) |
-| **Business logic** | `domain/models` (Algorithms) | `domain/models` (View models logic) |
+| **State/Logic** | `data/repositories` / `mappers` | `ui/viewmodel` |
+| **Data models** | `data/dtos` | `data/dtos` |
+| **Transformations** | `data/mappers` | `data/mappers` |
+| **Business logic** | `domain/models` | `domain/models` |
