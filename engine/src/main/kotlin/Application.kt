@@ -4,7 +4,9 @@ import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.plugins.cors.routing.*
 import io.ktor.serialization.kotlinx.json.*
+import io.ktor.http.*
 import kotlinx.serialization.json.Json
 
 fun main() {
@@ -13,11 +15,18 @@ fun main() {
 }
 
 fun Application.module() {
-    // Configuramos para que el servidor hable JSON (vital para Verstappen)
+    // Permitimos CORS para que la App pueda conectar localmente
+    install(CORS) {
+        anyHost()
+        allowHeader(HttpHeaders.ContentType)
+    }
+
+    // Configuramos para que el servidor hable JSON
     install(ContentNegotiation) {
         json(Json {
             prettyPrint = true
             isLenient = true
+            ignoreUnknownKeys = true
         })
     }
     // Llamamos a las rutas
