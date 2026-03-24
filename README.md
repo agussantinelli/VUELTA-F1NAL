@@ -1,7 +1,7 @@
 <h1 align="center">🏎️ VUELTA F1NAL — Full Stack Project</h1>
 
 <p align="center">
-  <img src="./public/logo_oficial.png" alt="Vuelta F1nal Logo" width="150" height="150">
+  <img src="./public/logo_oficial.png" alt="Vuelta F1nal Logo" width="200" height="200">
 </p>
 
 <div align="center">
