@@ -175,8 +175,8 @@
 │   ├── src/main/java/com/vueltaf1nal/app/
 │   │   ├── data/                                     # Capa de Datos: DTOs, Repositorios (Impl), APIs
 │   │   │   ├── models/api/                           # DTOs (Serialización)
-│   │   │   ├── remote/                               # Servicios Ktor (F1ApiService, ResultsService, etc.)
-│   │   │   └── repository/                            # Implementaciones de Repositorios
+│   │   │   ├── remote/                               # Servicios Ktor (NetworkClient, ResultsService, TopSpeedsService)
+│   │   │   └── repository/                            # Implementaciones de Repositorios (ResultsRepositoryImpl, etc.)
 │   │   ├── domain/                                   # Capa de Dominio: Modelos, Interfaces
 │   │   │   ├── models/                               # Modelos de Negocio
 │   │   │   └── repository/                            # Interfaces de Repositorios (Abstracción)
@@ -187,16 +187,18 @@
 │   │   └── MainActivity.kt                           # Punto de entrada (Host de Navegación)
 │   └── src/main/res/                                 # Recursos Android (layouts, themes, drawables)
 ├── engine/                                           # Backend: Servidor Ktor (Kotlin JVM)
-│   ├── src/main/kotlin/com/vueltaf1nal/
-│   │   ├── data/                                     # Capa de Datos: DTOs, Repositorios (Impl), Mappers
-│   │   │   ├── dtos/                                 # Serialización (API Contracts)
-│   │   │   ├── mappers/                              # Transformación (DTO <-> Domain)
-│   │   │   └── repositories/                          # Lógica de Datos persistente
-│   │   ├── domain/                                   # Capa de Dominio: Modelos, Lógica Pura
-│   │   │   └── models/                               # Entidades de Negocio
-│   │   └── routes/                                   # Capa de Entrada: Ktor Routes (Endpoints)
-│   ├── src/main/resources/                           # Recursos (Resources, Config)
-│   └── Application.kt                                # Punto de entrada (Config Server)
+│   ├── src/main/kotlin/
+│   │   ├── com/vueltaf1nal/                          # Paquete Principal
+│   │   │   ├── data/                                 # Capa de Datos: DTOs, Repositorios (Impl), Mappers
+│   │   │   │   ├── dtos/                             # Serialización (API Contracts)
+│   │   │   │   ├── mappers/                          # Transformación (DTO <-> Domain)
+│   │   │   │   └── repositories/                      # Lógica de Datos persistente
+│   │   │   ├── domain/                               # Capa de Dominio: Modelos, Lógica Pura
+│   │   │   │   └── models/                           # Entidades de Negocio
+│   │   │   └── routes/                               # Capa de Entrada: Ktor Routes (Endpoints)
+│   │   ├── Application.kt                            # Punto de entrada (Config Server)
+│   │   └── Routing.kt                                # Configuración de Rutas y Repositorios
+│   └── src/main/resources/                           # Recursos (Resources, Config)
 ├── build.gradle.kts                                  # Configuración de compilación raíz
 ├── settings.gradle.kts                               # Definición de módulos del proyecto
 └── README.md                                         # Documentación principal del ecosistema
